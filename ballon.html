@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ballon</title>
+</head>
+<style>
+    #ballon{
+        height: 200px;
+        width: 200px;
+        border-radius: 100%;
+        background-color: red;
+    }
+
+</style>
+<body>
+    <div class = "CONTAINER">
+         <div class = "BALLON" id="ballon"></div>
+    </div>
+</body>
+<script>
+    var cercle = document.getElementById("ballon");
+    var size = document.getElementById("ballon").clientHeight;
+    
+    cercle.addEventListener("click", function()
+        {
+            ColorUp();
+            tailleUp();
+           
+        }
+    )
+    cercle.addEventListener("mouseleave", function()
+        {
+            ColorDown();
+            tailleDown();
+        }
+    )
+
+    function tailleUp()
+    {
+        if(size >= 420)
+        {
+            size = 190;
+            cercle.style.backgroundColor = "red";
+
+        }
+        size = size + 10;
+        cercle.style.height = size + "px";
+        cercle.style.width = size + "px";
+        console.log(size);
+
+    }
+    function tailleDown()
+    {
+        size = size - 5;
+        if(size <= 200)
+        {
+            size = 200;
+        }
+        
+        cercle.style.height = size + "px";
+        cercle.style.width = size + "px";
+        console.log(size);
+
+    }
+    function ColorUp()
+    {
+        if(cercle.style.backgroundColor == "red")
+            cercle.style.backgroundColor = "green";
+        else if(cercle.style.backgroundColor == "green")
+            cercle.style.backgroundColor = "blue";
+        else(cercle.style.backgroundColor = "red")
+    }
+    function ColorDown()
+    {
+        if(cercle.style.backgroundColor == "red")
+            cercle.style.backgroundColor = "green";
+        else if(cercle.style.backgroundColor == "green")
+            cercle.style.backgroundColor = "blue";
+        else(cercle.style.backgroundColor = "red")
+    }
+
+</script>
+</html>
